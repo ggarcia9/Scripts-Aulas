@@ -29,19 +29,19 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 
 ## Comandos necessários do Git
 * **git clone** *LINK DO REPOSITÓRIO* - Clona (faz download) do repositório da nuvem para o seu computador.
-\
+
 * **git diff** - Informa quais mudanças foram feitas no código do repositório local.
-\
+
 * **git add** *NOME DO ARQUIVO* - Adiciona mudanças feitas no arquivo à área de pré-processamento. Para adicionar todas as mudanças utilizar "git add -A
-\
+
 * **git status** - Informa quais arquivos foram colocados na área de pré-processamente.
-\
+
 * **git commit -m** **"** *mensagem explicando mudanças feitas* - Registra todas as mudanças contidas na área de pré-processamento no seu computador. É importante ser sempre bastante específico nos comentários.
-\
+
 * **git push** - Atualiza o código armazenado na nuvem com as mudanças realizadas localmente.
-\
+
 * **git pull** - "Puxa" o código da nuvem e atualiza o seu diretório local.
-\
+
 * **git log** - Mostra últimos commits feitos, seus autores, horários, mensagens e código
-\
+
 * **git revert** *CÓDIGO* - Reverte a mudança feita em determinado commit
