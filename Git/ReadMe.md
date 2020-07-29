@@ -36,7 +36,7 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 
 * **git status** - Informa quais arquivos foram colocados na área de pré-processamente.
 
-* **git commit -m** **"** *mensagem explicando mudanças feitas* - Registra todas as mudanças contidas na área de pré-processamento no seu computador. É importante ser sempre bastante específico nos comentários.
+* **git commit -m** **"** *mensagem explicando mudanças feitas***"** - Registra todas as mudanças contidas na área de pré-processamento no seu computador. É importante ser sempre bastante específico nos comentários.
 
 * **git push** - Atualiza o código armazenado na nuvem com as mudanças realizadas localmente.
 
