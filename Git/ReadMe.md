@@ -2,7 +2,7 @@
 Nesta capacitação aprenderemos a utilizar a tecnologia Git em conjunto com a plataforma Github para facilitar o ambiente de programação nos grupos.
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1200px-Git-logo.svg.png)
 
-## Crie uma conta no Github:\
+## Crie uma conta no Github:
 https://github.com/
 
 ## Instalando o Git
