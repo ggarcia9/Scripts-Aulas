@@ -13,7 +13,7 @@ https://git-scm.com/download/mac
 
 * Para Windows utilizar o installer disponível neste link:
 https://git-scm.com/download/win \
-Durante a instalação selecionar "Use Git from the Windows Command Prompt".\
+Durante a instalação selecionar "Use Git and optional Uix tools from the Command Prompt".\
 \
 Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de versões desenvolvida por Linus Torvalds, Github é uma plataforma que faz uso da tecologia Git para criar um ambiente comum para desenvolvedores. 
 
