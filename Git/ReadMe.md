@@ -21,7 +21,7 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 ##### Para começar abra o Terminal se você estiver num mac ou o Git Bash se você estiver num windows. 
 ##### Substitua suas informações pessoais nos campos necessários:
 * git config --global user.name "SEU USERNAME"
-* git config --global user.email SEU EMAIL
+* git config --global user.email "SEU EMAIL"
 
 ## Comandos do Bash/Terminal de comando:
 * **ls** - (List) - Lista arquivos contidos no diretório presente (Mac e Linux).
