@@ -24,7 +24,8 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 * git config --global user.email SEU EMAIL
 
 ## Comandos do Bash/Terminal de comando:
-* **ls** - (List) - Lista arquivos contidos no diretório presente.
+* **ls** - (List) - Lista arquivos contidos no diretório presente (Mac e Linux).
+* **dir** - (List) - Lista arquivos contidos no diretório presente (Windows).
 * **cd** *NOME DO DIRETÓRIO* - (Change directory) - Acessa sub-diretório especificado no diretório presente.
 
 ## Comandos necessários do Git
