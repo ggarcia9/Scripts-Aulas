@@ -58,7 +58,7 @@ git config --global user.email "SEU EMAIL"
 **2. Escolher onde armazenar repositório:**\
 **cd** *NOME DO DIRETÓRIO* - (Change directory) - Acessa sub-diretório especificado no diretório presente.
 
-**3. Clonar repositório do github:**\
+**3. Clonar repositório do github:**
 * **git clone** *LINK DO REPOSITÓRIO* - Clona (faz download) do repositório da nuvem para o seu computador.
 
 
