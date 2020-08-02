@@ -23,10 +23,13 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 * git config --global user.name "SEU USERNAME"
 * git config --global user.email "SEU EMAIL"
 
-## Comandos do Bash/Terminal de comando:
+## Comandos do Git-Bash(Windows)/Terminal(macOS):
 * **ls** - (List) - Lista arquivos contidos no diretório presente (Mac e Linux).
-* **dir** - (List) - Lista arquivos contidos no diretório presente (Windows).
 * **cd** *NOME DO DIRETÓRIO* - (Change directory) - Acessa sub-diretório especificado no diretório presente.
+
+## Comandos do Command Prompt(Windows):
+* **cd** *NOME DO DIRETÓRIO* - (Change directory) - Acessa sub-diretório especificado no diretório presente.
+* **dir** - (List) - Lista arquivos contidos no diretório presente (Windows).
 
 ## Comandos necessários do Git
 * **git clone** *LINK DO REPOSITÓRIO* - Clona (faz download) do repositório da nuvem para o seu computador.
@@ -46,3 +49,8 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 * **git log** - Mostra últimos commits feitos, seus autores, horários, mensagens e código
 
 * **git revert** *CÓDIGO* - Reverte a mudança feita em determinado commit
+
+## Exemplo da Capacitação:
+1. Cadastrar seu user e email:
+
+
