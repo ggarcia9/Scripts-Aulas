@@ -52,5 +52,6 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 
 ## Exemplo da Capacitação:
 1. Cadastrar seu user e email:
+2. teste
 
 
