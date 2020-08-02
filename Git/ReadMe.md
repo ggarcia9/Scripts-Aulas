@@ -49,9 +49,17 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 * **git log** - Mostra últimos commits feitos, seus autores, horários, mensagens e código
 
 * **git revert** *CÓDIGO* - Reverte a mudança feita em determinado commit
-
+/
 ## Exemplo da Capacitação:
-1. Cadastrar seu user e email:
-2. teste
+**1. Cadastrar seu user e email:**
+git config --global user.name "SEU USERNAME"\
+git config --global user.email "SEU EMAIL"
+
+**2. Escolher onde armazenar repositório:**
+**cd** *NOME DO DIRETÓRIO* - (Change directory) - Acessa sub-diretório especificado no diretório presente.
+
+**3. Clonar repositório do github:**
+* **git clone** *LINK DO REPOSITÓRIO* - Clona (faz download) do repositório da nuvem para o seu computador.
+
 
 
