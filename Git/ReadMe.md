@@ -73,13 +73,13 @@ Edite o texto do arquivo utilizando o Rstudio ou um editor de texto.
 **6. Adicionar mudanças a área de pré-processamento:**\
 **git add** *NOME DO ARQUIVO* - Adiciona mudanças feitas no arquivo à área de pré-processamento
 
-**6. Conferir items contidos na área de pré-processamento:**\
+**7. Conferir items contidos na área de pré-processamento:**\
 **git status** - Informa quais arquivos foram colocados na área de pré-processamente.
 
-**7. Atualizar repositório local com mudanças da áre de pré-processamento:**\
+**8. Atualizar repositório local com mudanças da áre de pré-processamento:**\
 **git commit -m** **"** *mensagem explicando mudanças feitas* **"
 
-**8. Atualizar repositório do Github em relação ao repositório local:**\
+**9. Atualizar repositório do Github em relação ao repositório local:**\
 **git push** - Atualiza o código armazenado na nuvem com as mudanças realizadas localmente.
 
 
