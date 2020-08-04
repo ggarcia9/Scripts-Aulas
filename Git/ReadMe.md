@@ -52,7 +52,7 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 * **git log** - Mostra últimos commits feitos, seus autores, horários, mensagens e código
 
 * **git revert** *CÓDIGO* - Reverte a mudança feita em determinado commit
-/
+
 ## Exemplo da Capacitação:
 **1. Cadastrar seu user e email:**\
 git config --global user.name "SEU USERNAME"\
@@ -61,8 +61,28 @@ git config --global user.email "SEU EMAIL"
 **2. Escolher onde armazenar repositório:**\
 **cd** *NOME DO DIRETÓRIO* - (Change directory) - Acessa sub-diretório especificado no diretório presente.
 
-**3. Clonar repositório do github:**\
+**3. Criar repositório no github e copiar o link na seção "file" para cloná-lo para o seu computador:**\
 **git clone** *LINK DO REPOSITÓRIO* - Clona (faz download) do repositório da nuvem para o seu computador.
+
+**4. Fazer mudanças no arquivo README.md:**\
+Edite o texto do arquivo utilizando o Rstudio ou um editor de texto.
+
+**5. Conferir mudanças feitas com o git diff:**\
+**git diff** - Informa quais mudanças foram feitas no código do repositório local.
+
+**6. Adicionar mudanças a área de pré-processamento:**\
+**git add** *NOME DO ARQUIVO* - Adiciona mudanças feitas no arquivo à área de pré-processamento
+
+**6. Conferir items contidos na área de pré-processamento:**\
+**git status** - Informa quais arquivos foram colocados na área de pré-processamente.
+
+**7. Atualizar repositório local com mudanças da áre de pré-processamento:**\
+**git commit -m** **"** *mensagem explicando mudanças feitas* **"
+
+**8. Atualizar repositório do Github em relação ao repositório local:**\
+**git push** - Atualiza o código armazenado na nuvem com as mudanças realizadas localmente.
+
+
 
 
 
