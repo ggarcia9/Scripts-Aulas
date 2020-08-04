@@ -31,6 +31,9 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 * **cd** *NOME DO DIRETÓRIO* - (Change directory) - Acessa sub-diretório especificado no diretório presente.
 * **dir** - (List) - Lista arquivos contidos no diretório presente (Windows).
 
+## Entendendo o Git
+![alt text](https://miro.medium.com/max/686/1*diRLm1S5hkVoh5qeArND0Q.png)
+
 ## Comandos necessários do Git
 * **git clone** *LINK DO REPOSITÓRIO* - Clona (faz download) do repositório da nuvem para o seu computador.
 
