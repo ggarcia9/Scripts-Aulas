@@ -53,6 +53,8 @@ Obs: Não confunda Git com Github. Git é a tecnologia de gerenciamento de vers�
 
 * **git revert** *CÓDIGO* - Reverte a mudança feita em determinado commit
 
+* **git reset** -Remove items da área de pré-processamento
+
 ## Exemplo da Capacitação:
 **1. Cadastrar seu user e email:**\
 git config --global user.name "SEU USERNAME"\
