@@ -204,7 +204,7 @@ sum(str_detect(words, "(.)\\1"))
 sum(str_detect(words, "([^aeiou])\\1[aeiou]"))
 ```
 
-Extrair as palavras que começão com "e" ou "y" e terminam com "t"
+Extrair as palavras que começam com "e" ou "y" e terminam com "t"
 
 ```{r}
 str_subset(words, "^[ey].*t$")
@@ -278,26 +278,3 @@ str_to_upper("Maçã", locale = "pt") # locale: pt de português
 
 stringi::stri_trans_general("é uma maçã", "Latin-ASCII") # tranasformar formato de string de um encoder para outro, no caso, retirou ou acentos da frase
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
