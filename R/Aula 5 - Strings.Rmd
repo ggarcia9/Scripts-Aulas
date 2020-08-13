@@ -25,7 +25,7 @@ Quantificadores: ?, +, *, {n,m}, {n,m}? (lazy matching)
                 
 Agrupamentos: ( ) 
 
-Backreference:  (..)\\1 
+Backreference:  (..)\\\1 
 
 ## Puxando o Tidyverse
 
