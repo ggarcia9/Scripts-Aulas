@@ -1,0 +1,303 @@
+---
+title: "Aula 5"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Expressões Regulares
+
+## Resumo:
+
+Coringa: .
+
+Âncoras: ^ $
+
+Especiais: \d \s \b \w
+
+Grupos: [abc] [^abc] 
+
+Alternativas: (ba|ca) 
+
+Quantificadores: ?, +, *, {n,m}, {n,m}? (lazy matching) 
+                
+Agrupamentos: ( ) 
+
+Backreference:  (..)\\1 
+
+## Puxando o Tidyverse
+
+```{r}
+library(tidyverse)
+library(stringi)
+```
+
+## Ideias básicas relacionadas a "strings" (cadeias de caracteres)
+
+Preferencialmente usaremos aspas ("" ao invés do apóstrofo '')
+
+```{r}
+string1 <- "Uma string é uma cadeia de caracteres"
+cat(string1)
+
+string2 <- 'Exemplo de "aspas" dentro de uma string'
+cat(string2)
+
+string3 <- "Exemplo de aspas \"dentro\" de uma string"
+cat(string3)
+
+x <- "\u00b5" # UNICODE
+cat(x)
+```
+
+## Tamanhos de strings
+
+```{r}
+x <- c("a", "R for Data Science", NA)
+
+str_length(x) # retorna o tamanho de cada string
+
+length(x) # retorna o tamanho do vetor
+```
+
+## Combinando strings
+
+```{r}
+str_c("x", "y", "z") # concatena strings
+str_c("x", "y", "z", sep = " : ")
+
+x <- c("a", "b", "c")
+y <- c("A", "B", "C")
+str_c(x, y) # concatena de forma vetorizada
+str_c(x, y, sep = " - ")
+str_c(x, y, sep = " - ", collapse = " | ") # junta todos os vetores em uma string
+
+x <- c("a", NA, "c")
+y <- c("A", "B", "C")
+str_c(x, y, sep = " - ")
+str_c(str_replace_na(x), y, sep = " - ") # substitui o valor NA pela string "NA"
+```
+
+## Substrings
+
+```{r}
+x <- c("Apple", "Banana", "Pear")
+str_sub(x, 1, 3)
+str_sub(x, 1, 3) <- "***" # substitui as primeiras letras
+x
+```
+
+# Padrões via Expressões Regulares
+
+```{r}
+x <- c("apple", "banana", "pear")
+str_view(x, "an") # ajuda a estudar as expressões regulares
+```
+
+## Coringa: .
+
+. corresponde a qualquer caractere, com exceção da quebra de linha
+
+```{r}
+str_view(x, ".a.")
+```
+
+distinção de coringa e "." --> \\.
+
+```{r}
+str_view(c(".bc", "a.c", "ab."), "\\.")
+```
+
+## Âncoras: ^ para começo e $ para o final da string
+
+```{r}
+str_view(x, "^a") # indica que o caractere deve estar no começo da string
+str_view(x, "r$") # indica que o caractere deve estar no final da string
+```
+
+O tidyverse tem uma base com 1000 palavras para aprendizado!
+
+```{r}
+# stringr::words
+
+head(words, 100)
+
+str_view(words, "w$", match = TRUE) # só mostra as palavras com resultado
+```
+
+## Especiais:
+
+Um único dígito = \\d
+
+Um espaço, tab ou "newline" = \\s
+
+Final de linha/quebra de linha = \\n
+
+Grupos: [abc] = a, b ou c; [^abc] = qualquer coisa, menos a, b ou c
+
+```{r}
+# palavras que terminam com "u" ou com "w"
+
+str_view(words, "[uw]$", match = TRUE)
+```
+
+Alternativas com ( | )
+
+```{r}
+x <- c("amor", "casa", "amar", "ame")
+
+str_view(x, "am(a|o|e)")
+```
+
+repetição (quantificadores)
+
+? = 0 ou 1; + = 1 ou mais; * = 0 ou mais
+
+```{r}
+x <- c("XXXXYZ", "XXYZZ", "XXXZZZ", "XXYY")
+str_view(x, "X+YZ+")
+str_view(x, "X+Y?Z")
+str_view(x, "X+Y+Z*")
+```
+
+Quantificadores mais precisos:
+
+{n} = exatamente n
+
+{n,} = n ou mais
+
+{,m} = no máximo m
+
+{n,m} = entre n e m
+
+```{r}
+str_view(x, "X{2,3}Y?Z{3}")
+```
+
+Avançado: lazy matching com {n,m}?
+
+```{r}
+str_view("aaaaa", "a{2,5}")
+str_view("aaaaa", "a{2,5}?") # parar no menor valor
+```
+
+Agrupamentos e backreferences
+
+```{r}
+head(fruit)
+
+str_view(fruit, "(..)\\1", match = TRUE) # dois caracteres quaisquer repetidos duas vezes
+```
+
+Ferramenta: quais strings casam com o padrão?
+
+```{r}
+x <- c("apple", "banana", "pear")
+str_detect(x, "e") # retorna fator de valores lógicos indicando se a string contém "e"
+str_detect(x, "e$")
+str_detect(x, "(.)\\1")
+
+sum(str_detect(words, "^y"))
+sum(str_detect(words, "(.)\\1"))
+sum(str_detect(words, "([^aeiou])\\1[aeiou]"))
+```
+
+Extrair as palavras que começão com "e" ou "y" e terminam com "t"
+
+```{r}
+str_subset(words, "^[ey].*t$")
+str_subset(words, "([^aeiou])\\1[aeiou]")
+```
+
+Filter strings
+
+```{r}
+tb <- tibble(word = words, pos = seq_along(words))
+
+tb %>% 
+  filter(str_detect(word, "^[ey].*t$"))
+```
+
+Número de ocorrências de uma letra
+
+```{r}
+str_count(x, "a")
+
+tb %>% 
+  mutate(vowels = str_count(word, "[aeiou]"),
+         consonants = str_count(word, "[^aeiou]"))
+```
+
+Ferramenta: como extrair os casamentos em cada string?
+
+```{r}
+head(sentences)
+
+has_my_colors <- str_subset(sentences, " (red|green|blue) ")
+head(has_my_colors)
+
+matches <- str_extract(has_my_colors, " (red|green|blue) ") %>% 
+  str_trim()
+head(matches)
+```
+
+A primeira palavra de cada sentença
+
+```{r}
+str_extract(sentences, "^[^ ]+")
+```
+
+Artigo definido "the" ou indefinido "a" seguido de uma palavra
+
+```{r}
+str_extract(sentences, "(( the | a )[^ .,]+)")
+```
+
+## Ferramenta: Substituindo padrões
+
+Substituir vogais por *
+
+```{r}
+phrase <- sentences[3]
+str_replace(phrase, "[aeiouAEIOU]", "*") # troca a primeira ocorrência
+str_replace_all(phrase, "[aeiouAEIOU]", "*") # troca todas as ocorrências
+```
+
+## Ferramenta: quebrando strings
+
+```{r}
+str_split(phrase, " ") # retorna uma lista
+```
+
+Outras funções interessantes:
+
+```{r}
+str_to_upper("Maçã", locale = "pt") # locale: pt de português
+
+stringi::stri_trans_general("é uma maçã", "Latin-ASCII") # tranasformar formato de string de um encoder para outro, no caso, retirou ou acentos da frase
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
